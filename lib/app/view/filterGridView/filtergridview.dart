@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class FilterGridView extends StatelessWidget {
   final List<String> imagePaths = [
@@ -33,10 +33,10 @@ class FilterGridView extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 3, // 3 items per row
-        crossAxisSpacing: 10, // Spacing between columns
-        mainAxisSpacing: 10, // Spacing between rows
-        childAspectRatio: 0.7, // Adjust the aspect ratio for better proportions
+        crossAxisCount: 3,
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
+        childAspectRatio: 0.7,
       ),
       itemCount: imagePaths.length,
       itemBuilder: (context, index) {
@@ -47,18 +47,18 @@ class FilterGridView extends StatelessWidget {
               borderRadius: BorderRadius.circular(23),
               child: Image.asset(
                 imagePaths[index],
-                fit: BoxFit.cover, // Ensure the image fills the container
-                height: 130, // Fixed height for the image
-                width:
-                    double.infinity, // Make the image fill the available width
+                fit: BoxFit.cover,
+                height: 130,
+                width: double.infinity,
               ),
             ),
-            const SizedBox(height: 5), // Space between image and text
+            const SizedBox(height: 5),
             Text(
               titles[index],
-              style: const TextStyle(
+              overflow: TextOverflow.clip,
+              style: GoogleFonts.ptSans(
+                fontWeight: FontWeight.w700,
                 color: Colors.white,
-                fontWeight: FontWeight.w500,
               ),
               textAlign: TextAlign.center,
             ),
