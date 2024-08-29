@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_8/utils/const.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 AppBar buildAppBar() {
@@ -7,21 +8,24 @@ AppBar buildAppBar() {
       children: [
         Row(
           children: [
-            Image.asset(
-              'assets/images/929093-200-removebg-preview.png',
-              color: Colors.white,
-              height: 30,
-              width: 30,
-            ),
+            Transform.rotate(
+              angle: (45 + 80) * 3.14159 / 180,
+              child: Image.asset(
+                starsimage,
+                color: Colors.white,
+                height: 35,
+                width: 35,
+              ),
+            )
           ],
         ),
         const SizedBox(width: 5),
         Text(
           "Avatarro",
-          style: GoogleFonts.openSans(
-            fontWeight: FontWeight.w600,
+          style: GoogleFonts.lato(
+            fontWeight: FontWeight.w700,
             color: Colors.white,
-            fontSize: 28,
+            fontSize: 27,
           ),
         ),
       ],

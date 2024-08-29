@@ -8,8 +8,11 @@ final List<String> imagePaths = [
   'assets/images/0e224cd4865bef54aeb1f4cc110b78dd.jpg',
   'assets/images/90a30a6661785a17e112c9efc3fa0cc6.jpg',
   'assets/images/874e5a2b273868f3ddc4ec3bb98cb739.jpg',
-  // Add more image paths here
 ];
+
+
+const String starsimage = 'assets/images/929093-200-removebg-preview.png';
+
 
 List<String> imagePathBottomNavbar = [
     'assets/images/png-transparent-computer-icons-home-house-home-angle-building-rectangle-thumbnail-removebg-preview.png',
