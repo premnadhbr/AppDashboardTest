@@ -128,7 +128,8 @@ class _HomeState extends State<Home> {
                     },
                     child: Image.asset(
                       imagePaths[0],
-                      color: selectedIndex == 2 ? Colors.white : Colors.grey,
+                      color:
+                          selectedIndex == 2 ? Colors.white : Colors.grey[100],
                       height: 30,
                       width: 30,
                     ),
@@ -137,20 +138,25 @@ class _HomeState extends State<Home> {
               ),
             ),
             GestureDetector(
-              onTap: () => _onItemTapped(1), // Center button index
+              onTap: () => _onItemTapped(1),
               child: Container(
-                height: 50,
-                width: 50,
-                decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
-                  gradient: LinearGradient(
-                    colors: [
-                      Color(0xff466cff),
-                      Color(0xffa22bff)
-                    ], // Constant gradient
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
+                height: 65,
+                width: 65,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  gradient: const LinearGradient(
+                    colors: [Color(0xff466cff), Color(0xffa22bff)],
+                    stops: [0.25, 0.75],
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
                   ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xffa22bff).withOpacity(0.6),
+                      blurRadius: 8,
+                      offset: const Offset(0, 4),
+                    ),
+                  ],
                 ),
                 child: Center(
                   child: Image.asset(
@@ -185,7 +191,8 @@ class _HomeState extends State<Home> {
                     },
                     child: Image.asset(
                       imagePaths[2],
-                      color: selectedIndex == 2 ? Colors.white : Colors.grey,
+                      color:
+                          selectedIndex == 2 ? Colors.white : Colors.grey[100],
                       height: 30,
                       width: 30,
                     ),
