@@ -27,7 +27,7 @@ final List<String> titles = [
 final List<String> filters = [
   'All',
   'Women fashion',
-  'sexy',
+  '3D',
   'superheroes',
   'fashion',
   '3D',
@@ -35,3 +35,5 @@ final List<String> filters = [
   'Characters',
   'Sports'
 ];
+
+

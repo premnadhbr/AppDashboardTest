@@ -36,6 +36,8 @@ class _HomeState extends State<Home> {
     });
   }
 
+  bool showTextFiled = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,32 +54,91 @@ class _HomeState extends State<Home> {
               decoration: const BoxDecoration(
                 color: Color.fromRGBO(31, 29, 34, 1.0),
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
+                  topLeft: Radius.circular(25),
+                  topRight: Radius.circular(25),
                 ),
               ),
               width: MediaQuery.of(context).size.width,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Most popular AI filters',
-                        style: GoogleFonts.nunito(
-                          fontWeight: FontWeight.w500,
-                          color: Colors.white,
-                          fontSize: 25,
+                  showTextFiled
+                      ? Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Most popular AI filters',
+                              style: GoogleFonts.nunito(
+                                fontWeight: FontWeight.w500,
+                                color: Colors.white,
+                                fontSize: 25,
+                              ),
+                            ),
+                            IconButton(
+                              onPressed: () {
+                                setState(() {
+                                  showTextFiled = !showTextFiled;
+                                });
+                              },
+                              icon: const Icon(
+                                Icons.search,
+                                size: 35,
+                                color: Colors.white,
+                              ),
+                            )
+                          ],
+                        )
+                      : TextField(
+                          decoration: InputDecoration(
+                            prefixIcon: const Icon(
+                              Icons.search,
+                              color: Colors.grey, // Adjust icon color
+                            ),
+                            filled: true,
+                            fillColor: const Color.fromRGBO(48, 48, 48, 1.0),
+                            hintText: "Search...",
+                            hintStyle: const TextStyle(
+                              color: Colors.grey, // Adjust hint text color
+                            ),
+                            contentPadding: const EdgeInsets.symmetric(
+                              vertical: 10.0,
+                              horizontal: 20.0,
+                            ),
+                            border: const OutlineInputBorder(
+                              borderSide: BorderSide.none, // Remove border side
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(15.0),
+                              ),
+                            ),
+                            enabledBorder: const OutlineInputBorder(
+                              borderSide: BorderSide.none, // Remove border side
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(15.0),
+                              ),
+                            ),
+                            focusedBorder: const OutlineInputBorder(
+                              borderSide: BorderSide.none, // Remove border side
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(15.0),
+                              ),
+                            ),
+                            suffixIcon: GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  showTextFiled = !showTextFiled;
+                                });
+                              },
+                              child: Container(
+                                margin: const EdgeInsets.all(13),
+                                decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.grey,
+                                ),
+                                child: const Icon(Icons.close),
+                              ),
+                            ),
+                          ),
                         ),
-                      ),
-                      const Icon(
-                        Icons.search,
-                        color: Colors.white,
-                        size: 30,
-                      ),
-                    ],
-                  ),
                   const SizedBox(height: 10),
                   buildFilterChips(selectedFilter, (filter) {
                     setState(() {
@@ -99,7 +160,7 @@ class _HomeState extends State<Home> {
         ],
       ),
       bottomNavigationBar: Container(
-        height: 80,
+        height: MediaQuery.of(context).size.height * 0.1,
         decoration: const BoxDecoration(
           color: Color.fromRGBO(31, 29, 34, 1.0),
         ),
@@ -108,7 +169,7 @@ class _HomeState extends State<Home> {
           children: [
             GestureDetector(
               onTap: () => _onItemTapped(0),
-              child: Container(
+              child: SizedBox(
                 height: 50,
                 width: 50,
                 child: Center(
@@ -161,7 +222,9 @@ class _HomeState extends State<Home> {
                 child: Center(
                   child: Image.asset(
                     imagePaths[1], // Center button image
-                    color: Colors.white, // Constant white color for the icon
+                    color: selectedIndex == 1
+                        ? Colors.white
+                        : Colors.grey[100], // Constant white color for the icon
                     height: 30,
                     width: 30,
                   ),
@@ -170,7 +233,7 @@ class _HomeState extends State<Home> {
             ),
             GestureDetector(
               onTap: () => _onItemTapped(2),
-              child: Container(
+              child: SizedBox(
                 height: 50,
                 width: 50,
                 child: Center(
