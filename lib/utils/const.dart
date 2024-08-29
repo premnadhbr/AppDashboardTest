@@ -11,6 +11,12 @@ final List<String> imagePaths = [
   // Add more image paths here
 ];
 
+List<String> imagePathBottomNavbar = [
+    'assets/images/png-transparent-computer-icons-home-house-home-angle-building-rectangle-thumbnail-removebg-preview.png',
+    'assets/images/png-clipart-computer-icons-camera-iphone-graphy-camera-photography-camera-icon-removebg-preview.png',
+    'assets/images/png-clipart-hexagonal-illustration-hexagon-shape-pattern-blocks-shapes-angle-text-removebg-preview.png',
+  ];
+
 final List<String> titles = [
   'Evening dress',
   'Latex',

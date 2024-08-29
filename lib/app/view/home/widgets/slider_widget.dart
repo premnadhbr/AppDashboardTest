@@ -22,7 +22,7 @@ Widget buildCarouselSlider({
     'business headshot',
   ],
 }) {
-  return Container(
+  return SizedBox(
     width: width,
     height: height,
     child: CarouselSlider.builder(
@@ -57,8 +57,8 @@ Widget buildCarouselSlider({
                 child: Text(
                   overlayTexts[itemIndex],
                   style: GoogleFonts.rubik(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 23,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 24,
                     color: Colors.white,
                   ),
                 ),
