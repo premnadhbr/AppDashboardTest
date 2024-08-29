@@ -33,6 +33,7 @@ class UpgradeButton extends StatelessWidget {
             Image.asset(
               'assets/images/6701409-removebg-preview.png',
               height: 50,
+              width: 35,
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -40,8 +41,8 @@ class UpgradeButton extends StatelessWidget {
               children: [
                 Text(
                   "Upgrade to PRO",
-                  style: GoogleFonts.poppins(
-                    fontWeight: FontWeight.bold, // Make the text bold
+                  style: GoogleFonts.roboto(
+                    fontWeight: FontWeight.w800,
                     fontSize: 20,
                     color: Colors.white,
                   ),
@@ -49,7 +50,7 @@ class UpgradeButton extends StatelessWidget {
                 Text(
                   "No ads and best image quality",
                   style: GoogleFonts.aBeeZee(
-                    fontWeight: FontWeight.bold, // Make the text bold
+                    fontWeight: FontWeight.w700, // Make the text bold
                     fontSize: 15,
                     color: Colors.white,
                   ),
@@ -88,7 +89,7 @@ class UpgradeButton extends StatelessWidget {
                   child: Center(
                     child: Text(
                       "GO",
-                      style: GoogleFonts.poppins(
+                      style: GoogleFonts.roboto(
                         fontWeight: FontWeight.bold, // Make the text bold
                         fontSize: 18,
                         color: const Color(0xffa22bff),
