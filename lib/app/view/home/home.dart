@@ -52,13 +52,17 @@ class _HomeState extends State<Home> {
                     children: [
                       Text(
                         'Most popular AI filters',
-                        style: GoogleFonts.rubik(
-                          fontWeight: FontWeight.w600,
+                        style: GoogleFonts.nunito(
+                          fontWeight: FontWeight.w500,
                           color: Colors.white,
                           fontSize: 25,
                         ),
                       ),
-                      const Icon(Icons.search, color: Colors.white),
+                      const Icon(
+                        Icons.search,
+                        color: Colors.white,
+                        size: 30,
+                      ),
                     ],
                   ),
                   const SizedBox(height: 10),

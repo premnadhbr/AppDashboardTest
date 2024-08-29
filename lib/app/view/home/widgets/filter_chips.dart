@@ -49,7 +49,7 @@ Widget buildFilterChips(
                 label: Text(
                   filters[index],
                   style: GoogleFonts.rubik(
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.w400,
                     color: Colors.white,
                   ),
                 ),
